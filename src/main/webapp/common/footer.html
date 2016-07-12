@@ -1,0 +1,35 @@
+<div class="footer">
+    <div class="wrap">
+        <div class="social_2 social_3">
+            <ul>
+                <li class="facebook"><a href="#"><span> </span></a></li>
+                <li class="twitter"><a href="#"><span> </span></a></li>
+                <li class="google"><a href="#"><span> </span></a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- scroll_top_btn -->
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+            };
+
+
+            $().UItoTop({ easingType: 'easeOutQuart' });
+
+        });
+    </script>
+    <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
+    <div class="copy">
+        <p>&copy; 2014 Template by <a href="http://fuwu8858.top" target="_blank">fuwu8858</a></p>
+    </div>
+</div>
+</body>
+</html>

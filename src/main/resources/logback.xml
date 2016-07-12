@@ -1,0 +1,64 @@
+<!-- if debug set to true, context info always print
+ otherwise the contex info will print when error occour -->
+<configuration scan="true" scanPeriod="15 seconds" debug="false">
+    <property name="maxHistory" value="10" />
+    <property name="applicationName" value="fuwu8858" />
+    <property name="maxFileSize" value="50MB" />
+    <property name="datePatern" value="yyyy-MM-dd HH:mm:ss.SSS"/>
+
+
+
+
+    <appender name="TaskLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>f:/logs/info.log</file>
+        <append>true</append>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>f:/logs/%d{yyyy-MM-dd-HH-mm}.log</fileNamePattern>
+            <maxHistory>${maxHistory}</maxHistory>
+            <maxFileSize>${maxFileSize}</maxFileSize>
+        </rollingPolicy>
+
+        <encoder>
+            <pattern>%d{${datePatern}} [%thread] [%level] [%logger{36}.%method].[%line] == %message%n</pattern>
+        </encoder>
+    </appender>
+<!--    <appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>E:/logs/mylog.txt</file>
+        <append>true</append>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            &lt;!&ndash; rollover daily &ndash;&gt;
+            <fileNamePattern>E:/logs/mylog-%d{yyyy-MM-dd_HH-mm}.%i.log</fileNamePattern>
+            <maxHistory>5</maxHistory>
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                &lt;!&ndash; or whenever the file size reaches 100MB &ndash;&gt;
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date %level [%thread] %logger{36} [%file : %line] %msg%n</pattern>
+        </encoder>
+    </appender>-->
+
+    <!--输出的控制台-->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoder 默认配置为PatternLayoutEncoder -->
+        <encoder>
+            <pattern>%d{${datePatern}} [%thread] [%level] [%logger{36}.%method].[%line] == %message%n</pattern>
+        </encoder>
+    </appender>
+    <!-- 为某个包下的所有类指定Appender 这里也可以指定类名称例如：com.aa.bb.ClassName-->
+    <logger name="com.task" >
+        <appender-ref ref="TaskLog" />
+    </logger>
+
+
+
+
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="TaskLog" />
+    </root>
+</configuration>
