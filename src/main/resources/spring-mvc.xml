@@ -14,7 +14,7 @@
 
     <!-- 以下为SpringMVC配置 -->
     <mvc:annotation-driven>
-        <!-- 返回json数据，@response使用 -->
+        <!-- 返回json数据，@response使  用 -->
         <mvc:message-converters register-defaults="true">
             <bean
                     class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
