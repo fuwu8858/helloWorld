@@ -29,7 +29,7 @@
         </mvc:message-converters>
     </mvc:annotation-driven>
 
-    <!-- 对模型视图名称的解析，即在模型视图名称添加前后缀 -->
+    <!-- 对模型视图名称的解析，即在模型视图名称添加前后缀1111 -->
     <bean
             class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass"
