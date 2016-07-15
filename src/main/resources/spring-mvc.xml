@@ -14,7 +14,7 @@
 
     <!-- 以下为SpringMVC配置 -->
     <mvc:annotation-driven>
-        <!-- 返回json数据，@response使  用 -->
+        <!-- 返回json数据，@response使用 -->
         <mvc:message-converters register-defaults="true">
             <bean
                     class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
@@ -29,7 +29,7 @@
         </mvc:message-converters>
     </mvc:annotation-driven>
 
-    <!-- 对模型视图名称的解析，即在模型视图名称添加前后缀1111 -->
+    <!-- 对模型视图名称的解析，即在模型视图名称添加前后缀 9999999999999999999-->
     <bean
             class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass"
